@@ -2,7 +2,7 @@
   "name": "ilovetext",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kahkasha17.github.io/iLoveText",
+"homepage": "https://kahkasha17.github.io/I_Love_Text",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
