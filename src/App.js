@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import MyNav from './myComponents/MyNav';
+import MyText from './myComponents/MyText';
 
 function App() {
+  const [DarkMode,setDarkMode]=useState('false');
+  const [DarkModeText,setDarkModeText]=useState("DarkMode");
+
+  const toggleMode =()=>
+  {
+    if(DarkMode === "false")
+    {
+      // document.body.style.backgroundColor ="#042743";
+      document.body.style.backgroundColor ='#042743';
+      document.getElementById("M2").style.color='white';
+      
+      setDarkModeText("LightMode")
+      setDarkMode('true' );
+    }
+    else
+    {
+      document.body.style.backgroundColor ='white';
+      document.getElementById("M2").style.color='#042743';
+      
+      setDarkModeText("DarkMode")
+      setDarkMode('false');
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <MyNav title="ILoveText" Mode={DarkMode} ModeText={DarkModeText} toggleMode={toggleMode}/>
+   <div className="container my-3" id="M2">
+   <MyText Heading="Enter Your Text Here"  />
+   </div>
+   
+   
+   </>
+   
   );
 }
 
